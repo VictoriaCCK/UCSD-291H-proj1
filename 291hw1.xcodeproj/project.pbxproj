@@ -7,24 +7,60 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		555C085E24414D8F00E036A4 /* ground.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 555C085C24414D8F00E036A4 /* ground.cpp */; };
 		556FA5D0243A6D6A0050055F /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 556FA5CF243A6D6A0050055F /* main.cpp */; };
+		556FA5FC243A73580050055F /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 556FA5ED243A73570050055F /* Camera.cpp */; };
+		556FA5FD243A73580050055F /* Cube.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 556FA5EF243A73570050055F /* Cube.cpp */; };
+		556FA5FE243A73580050055F /* Window.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 556FA5F0243A73570050055F /* Window.cpp */; };
+		556FA5FF243A73580050055F /* shader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 556FA5F1243A73570050055F /* shader.cpp */; };
+		556FA600243A73580050055F /* Tokenizer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 556FA5F4243A73570050055F /* Tokenizer.cpp */; };
+		556FA603243A75410050055F /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 556FA602243A75410050055F /* OpenGL.framework */; };
+		556FA605243A75890050055F /* libglfw.3.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 556FA604243A75890050055F /* libglfw.3.3.dylib */; };
+		556FA606243A75A30050055F /* shader.vert in CopyFiles */ = {isa = PBXBuildFile; fileRef = 556FA5F7243A73580050055F /* shader.vert */; };
+		556FA607243A75A30050055F /* shader.frag in CopyFiles */ = {isa = PBXBuildFile; fileRef = 556FA5F8243A73580050055F /* shader.frag */; };
+		556FA60A243AA6200050055F /* tetrahedral.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 556FA608243AA6200050055F /* tetrahedral.cpp */; };
+		556FA610243BEE740050055F /* Vertice.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 556FA60E243BEE740050055F /* Vertice.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		556FA5CA243A6D6A0050055F /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
+			buildActionMask = 12;
+			dstPath = shaders;
+			dstSubfolderSpec = 16;
 			files = (
+				556FA606243A75A30050055F /* shader.vert in CopyFiles */,
+				556FA607243A75A30050055F /* shader.frag in CopyFiles */,
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		555C085C24414D8F00E036A4 /* ground.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ground.cpp; sourceTree = "<group>"; };
+		555C085D24414D8F00E036A4 /* ground.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ground.hpp; sourceTree = "<group>"; };
 		556FA5CC243A6D6A0050055F /* 291hw1 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = 291hw1; sourceTree = BUILT_PRODUCTS_DIR; };
 		556FA5CF243A6D6A0050055F /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		556FA5ED243A73570050055F /* Camera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Camera.cpp; sourceTree = "<group>"; };
+		556FA5EE243A73570050055F /* main.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = main.h; sourceTree = "<group>"; };
+		556FA5EF243A73570050055F /* Cube.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Cube.cpp; sourceTree = "<group>"; };
+		556FA5F0243A73570050055F /* Window.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Window.cpp; sourceTree = "<group>"; };
+		556FA5F1243A73570050055F /* shader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = shader.cpp; sourceTree = "<group>"; };
+		556FA5F2243A73570050055F /* Cube.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cube.h; sourceTree = "<group>"; };
+		556FA5F3243A73570050055F /* Window.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Window.h; sourceTree = "<group>"; };
+		556FA5F4243A73570050055F /* Tokenizer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Tokenizer.cpp; sourceTree = "<group>"; };
+		556FA5F5243A73570050055F /* Camera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Camera.h; sourceTree = "<group>"; };
+		556FA5F7243A73580050055F /* shader.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = shader.vert; sourceTree = "<group>"; };
+		556FA5F8243A73580050055F /* shader.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = shader.frag; sourceTree = "<group>"; };
+		556FA5F9243A73580050055F /* Tokenizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tokenizer.h; sourceTree = "<group>"; };
+		556FA5FA243A73580050055F /* shader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shader.h; sourceTree = "<group>"; };
+		556FA5FB243A73580050055F /* core.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = core.h; sourceTree = "<group>"; };
+		556FA602243A75410050055F /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		556FA604243A75890050055F /* libglfw.3.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.3.3.dylib; path = ../../../../../../../usr/local/Cellar/glfw/3.3.1/lib/libglfw.3.3.dylib; sourceTree = "<group>"; };
+		556FA608243AA6200050055F /* tetrahedral.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = tetrahedral.cpp; sourceTree = "<group>"; };
+		556FA609243AA6200050055F /* tetrahedral.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = tetrahedral.hpp; sourceTree = "<group>"; };
+		556FA60E243BEE740050055F /* Vertice.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Vertice.cpp; sourceTree = "<group>"; };
+		556FA60F243BEE740050055F /* Vertice.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Vertice.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +68,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				556FA605243A75890050055F /* libglfw.3.3.dylib in Frameworks */,
+				556FA603243A75410050055F /* OpenGL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,6 +81,7 @@
 			children = (
 				556FA5CE243A6D6A0050055F /* 291hw1 */,
 				556FA5CD243A6D6A0050055F /* Products */,
+				556FA601243A75410050055F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,9 +96,46 @@
 		556FA5CE243A6D6A0050055F /* 291hw1 */ = {
 			isa = PBXGroup;
 			children = (
+				556FA5ED243A73570050055F /* Camera.cpp */,
+				556FA5F5243A73570050055F /* Camera.h */,
+				556FA5FB243A73580050055F /* core.h */,
+				556FA5EF243A73570050055F /* Cube.cpp */,
+				556FA5F2243A73570050055F /* Cube.h */,
+				556FA5EE243A73570050055F /* main.h */,
+				556FA5F1243A73570050055F /* shader.cpp */,
+				556FA5FA243A73580050055F /* shader.h */,
+				556FA5F6243A73580050055F /* shaders */,
+				556FA5F4243A73570050055F /* Tokenizer.cpp */,
+				556FA5F9243A73580050055F /* Tokenizer.h */,
+				556FA5F0243A73570050055F /* Window.cpp */,
+				556FA5F3243A73570050055F /* Window.h */,
 				556FA5CF243A6D6A0050055F /* main.cpp */,
+				556FA608243AA6200050055F /* tetrahedral.cpp */,
+				556FA609243AA6200050055F /* tetrahedral.hpp */,
+				556FA60E243BEE740050055F /* Vertice.cpp */,
+				556FA60F243BEE740050055F /* Vertice.hpp */,
+				555C085C24414D8F00E036A4 /* ground.cpp */,
+				555C085D24414D8F00E036A4 /* ground.hpp */,
 			);
 			path = 291hw1;
+			sourceTree = "<group>";
+		};
+		556FA5F6243A73580050055F /* shaders */ = {
+			isa = PBXGroup;
+			children = (
+				556FA5F7243A73580050055F /* shader.vert */,
+				556FA5F8243A73580050055F /* shader.frag */,
+			);
+			path = shaders;
+			sourceTree = "<group>";
+		};
+		556FA601243A75410050055F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				556FA604243A75890050055F /* libglfw.3.3.dylib */,
+				556FA602243A75410050055F /* OpenGL.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -118,7 +194,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				555C085E24414D8F00E036A4 /* ground.cpp in Sources */,
+				556FA60A243AA6200050055F /* tetrahedral.cpp in Sources */,
+				556FA5FF243A73580050055F /* shader.cpp in Sources */,
+				556FA5FD243A73580050055F /* Cube.cpp in Sources */,
+				556FA5FC243A73580050055F /* Camera.cpp in Sources */,
+				556FA600243A73580050055F /* Tokenizer.cpp in Sources */,
 				556FA5D0243A6D6A0050055F /* main.cpp in Sources */,
+				556FA610243BEE740050055F /* Vertice.cpp in Sources */,
+				556FA5FE243A73580050055F /* Window.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,6 +324,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				LIBRARY_SEARCH_PATHS = (
+					/usr/local/lib,
+					/usr/local/Cellar/glfw/3.3.1/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -248,6 +337,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				LIBRARY_SEARCH_PATHS = (
+					/usr/local/lib,
+					/usr/local/Cellar/glfw/3.3.1/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
