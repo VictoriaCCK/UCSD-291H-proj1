@@ -14,18 +14,19 @@ const char* Window::windowTitle = "CSE 291H";
 //glm::vec3 cubeMax=glm::vec3(1, 1, 1);
 // Objects to render
 Cube * Window::cube;
-
+bool stop = false;
+int operate_time = 0;
 // Camera Properties
 Camera* Cam;
-Tetrahedral* tetrahedral[300];
-int Tetrahedral_SIZE = 300;
+Tetrahedral* tetrahedral[120];
+int Tetrahedral_SIZE = 120;
 // Interaction Variables
 bool LeftDown, RightDown;
 int MouseX, MouseY;
 int fall_len = 0;
 // The shader program id
 GLuint Window::shaderProgram;
-Vertice* Particles[120];
+Vertice* Particles[60];
 Ground* ground;
 //std::vector<Vertice> a = {
 //        // Front
@@ -79,7 +80,7 @@ Ground* ground;
 //    glm::vec3(-1,-1,1),
 //    glm::vec3(-1,1,1)
 //};
-float dis = 0.5;
+float dis = 0.8;
 float start_x_1 = -1, start_y_1 = -1, start_z_1 = 1;
 std::vector<Vertice> a = {
     glm::vec3(start_x_1, start_y_1, start_z_1),
@@ -243,16 +244,21 @@ void Window::idleCallback()
 	Cam->Update();
 //    cube->update();
     
-    for (int i = 0; i < 120; i++) {
+    if(stop == false){
+    operate_time++;
+    for (int i = 0; i < 60; i++) {
         if (Particles[i]->position[1] < -2.5) {
             Particles[i]->velocity *= -0.999;
             Particles[i]->position[1] = -2.5;
+//            stop = true;
         }
-        Particles[i]->integrate(0.1);
+//        std::cout<<operate_time<<" "<<i<<" the force is "<<to_string(Particles[i]->force)<<"\n the location is "<<to_string(Particles[i]->position)<<std::endl;
+        Particles[i]->integrate(0.005);
     }
-//    initialize_Tetrahedral();
-    for (int i = 0; i < 300; i++) {
+     for (int i = 0; i < Tetrahedral_SIZE; i++) {
         tetrahedral[i]->update();
+//         std::cout<<"tetrahedral "<<i<<" T "<<to_string(tetrahedral[i]->T)<<std::endl;
+     }
     }
 }
 
@@ -348,7 +354,7 @@ void Window::cursor_callback(GLFWwindow* window, double currX, double currY) {
 
 void Window::initialize_Particles()
 {
-    for (int i = 0; i<=5; i++) {
+    for (int i = 0; i<=2; i++) {
         for (int j = 0; j<=4; j++) {
             for (int k = 0; k<=3; k++) {
                 Particles[i*20 + j*4 + k] = new Vertice(glm::vec3(start_x_1 + k * dis, start_y_1 + i * dis, start_z_1 - j * dis));
@@ -362,7 +368,7 @@ void Window::initialize_Particles()
 void Window::initialize_Tetrahedral()
 {
     std::vector<int> num;
-    for (int i = 0; i<5; i++) {
+    for (int i = 0; i<2; i++) {
         for (int j = 0; j<4; j++) {
             for (int k = 0; k<3; k++) {
                 int idx = i * 20 + j * 4 + k;
@@ -380,7 +386,7 @@ void Window::initialize_Tetrahedral()
         }
     }
     
-    for (int i = 0; i<5; i++) {
+    for (int i = 0; i<2; i++) {
         for (int j = 0; j<4; j++) {
             for (int k = 0; k<3; k++) {
                 int idx = i * 20 + j * 4 + k;
@@ -392,13 +398,13 @@ void Window::initialize_Tetrahedral()
                 num.push_back(idx + 1);
                 num.push_back(idx + 25);
                 num.push_back(idx + 20);
-                tetrahedral[60 + i*12 + j*3 + k] = new Tetrahedral(num);
+                tetrahedral[24 + i*12 + j*3 + k] = new Tetrahedral(num);
                 std::vector<int>().swap(num);
             }
         }
     }
 
-    for (int i = 0; i<5; i++) {
+    for (int i = 0; i<2; i++) {
         for (int j = 0; j<4; j++) {
             for (int k = 0; k<3; k++) {
                 int idx = i * 20 + j * 4 + k;
@@ -410,13 +416,13 @@ void Window::initialize_Tetrahedral()
                 num.push_back(idx + 4);
                 num.push_back(idx + 25);
                 num.push_back(idx + 1);
-                tetrahedral[120 + i*12 + j*3 + k] = new Tetrahedral(num);
+                tetrahedral[48 + i*12 + j*3 + k] = new Tetrahedral(num);
                 std::vector<int>().swap(num);
             }
         }
     }
 
-    for (int i = 0; i<5; i++) {
+    for (int i = 0; i<2; i++) {
         for (int j = 0; j<4; j++) {
             for (int k = 0; k<3; k++) {
                 int idx = i * 20 + j * 4 + k;
@@ -424,18 +430,18 @@ void Window::initialize_Tetrahedral()
 //                a[1].position = Particles[idx + 20]->position;
 //                a[2].position = Particles[idx + 24]->position;
 //                a[3].position = Particles[idx + 4]->position;
-                num.push_back(idx + 25);
-                num.push_back(idx + 20);
                 num.push_back(idx + 24);
+                num.push_back(idx + 20);
+                num.push_back(idx + 25);
                 num.push_back(idx + 4);
-                tetrahedral[180 + i*12 + j*3 + k] = new Tetrahedral(num);
+                tetrahedral[72 + i*12 + j*3 + k] = new Tetrahedral(num);
                 std::vector<int>().swap(num);
             }
         }
     }
     
     
-    for (int i = 0; i<5; i++) {
+    for (int i = 0; i<2; i++) {
         for (int j = 0; j<4; j++) {
             for (int k = 0; k<3; k++) {
                 int idx = i * 20 + j * 4 + k;
@@ -447,7 +453,7 @@ void Window::initialize_Tetrahedral()
                 num.push_back(idx + 20);
                 num.push_back(idx + 25);
                 num.push_back(idx + 1);
-                tetrahedral[240 + i*12 + j*3 + k] = new Tetrahedral(num);
+                tetrahedral[96 + i*12 + j*3 + k] = new Tetrahedral(num);
                 std::vector<int>().swap(num);
             }
         }

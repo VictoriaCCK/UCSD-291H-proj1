@@ -28,6 +28,7 @@ public:
     // Tetrahedral Information
     std::vector<Vertice> points;
     std::vector<glm::vec3> positions;
+    std::vector<glm::vec3> pre_positions;
     std::vector<glm::vec3> normals;
     std::vector<unsigned int> indices;
     std::vector<int> point_idx;
@@ -38,7 +39,7 @@ public:
     glm::mat3 stress_tensor;
     float vol = 0;
     float mass = 0;
-    float destiny = 1000;
+    float destiny = 10;
     
 public:
     Tetrahedral(std::vector<int> p);

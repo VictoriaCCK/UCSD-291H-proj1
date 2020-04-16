@@ -25,5 +25,6 @@ void main()
 	vec3 reflectance = irradiance * DiffuseColor;
 
 	// Gamma correction
-	fragColor = vec4(sqrt(reflectance), 1);
+    fragColor = vec4(sqrt(reflectance), 1);
+//    fragColor = vec4(1, 1, 1, 1);
 }

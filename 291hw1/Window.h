@@ -8,9 +8,9 @@
 #include "tetrahedral.hpp"
 #include "Vertice.hpp"
 #include "ground.hpp"
-
+#include <glm/gtx/string_cast.hpp>
 ////////////////////////////////////////////////////////////////////////////////
-extern Vertice* Particles[120];
+extern Vertice* Particles[60];
 extern std::vector<glm::mat3> Tetrahedral_R;
 extern int Tetrahedral_SIZE;
 class Window

@@ -20,9 +20,9 @@ public:
     glm::mat4 model = glm::mat4(1);
     // Vertice Information
     glm::vec3 position = glm::vec3(0, 0, 0);
-    glm::vec3 force = glm::vec3(0, -1, 0);
+    glm::vec3 force = glm::vec3(0, 0, 0);
     glm::vec3 velocity = glm::vec3(0, 0, 0);
-    float mass = 10;
+    float mass = 0;
     
 public:
     Vertice(glm::vec3 point);
